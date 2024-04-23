@@ -1,0 +1,18 @@
+@use './variables' as var;
+
+.center {
+  flex: 2 0 0;
+  border-right: 1px solid var.$liteGray-color;
+  border-left: 1px solid var.$liteGray-color;
+  // height: 100%;
+}
+
+.left,
+.right {
+  flex: 1 0 0;
+}
+
+.Home {
+  display: flex;
+  height: 100%;
+}
