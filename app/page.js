@@ -1,9 +1,12 @@
+"use client"
+
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Left from './Left'
 import Center from './Center'
 import Right from './Right'
 import style from '../styles/Home.module.scss'
+import json from './data/data.json'
 
 export default function Home() {
   return (
@@ -12,7 +15,7 @@ export default function Home() {
         <Left />
       </div>
       <div className={style.center}>
-        <Center /*_contents={_contents}*/ />
+        <Center _contents={json} />
       </div>
       <div className={style.right}>
         <Right />

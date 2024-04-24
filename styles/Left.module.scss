@@ -1,0 +1,77 @@
+@import './variables';
+
+.left {
+    &__body {
+        height: 100%;
+        padding: $space-L;
+        display: inline-flex;
+        flex-direction: column;
+        gap: $space-L;
+    }
+
+    &__button {
+        background-color: $white-color;
+        width: 100%;
+
+        border: {
+            style: none;
+            radius: 2rem;
+        }
+
+        font-size: 1.3rem;
+        padding:$space-M;
+
+        text-align: left;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $whiteGray-color;
+        }
+    }
+
+    &__buttonText {
+        display: flex;
+        align-items: center;
+        gap: $space-M;
+    }
+
+    &__blueButton {
+        background-color: $skyBlue-color;
+
+        border: {
+            style: none;
+            radius: 2rem;
+        }
+
+        font-size: 1.3rem;
+        color: $white-color;
+        padding:$space-M;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $hoverBlue-color;
+        }
+
+    }
+}
+
+.userArea {
+    display: flex;
+    flex-direction: column;
+    padding: $space-L;
+
+    border: {
+        width: 1px;
+        style: solid;
+        color: $gray-color;
+        radius: 2rem;
+    }
+
+    &__userName {
+        font-weight: bold;
+    }
+
+    &__userId {
+        color: $gray-color;
+    }
+}

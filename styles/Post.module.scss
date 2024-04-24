@@ -1,0 +1,37 @@
+@import './variables';
+
+.tweet {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $liteGray-color ;
+    padding: $space-M;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.userName {
+    font-weight: bold;
+}
+
+.date {
+    color: $gray-color;
+}
+
+.content {}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: $space-L;
+    color: $gray-color;
+    padding-top: $space-M;
+}
+
+.iconArea {
+    display: flex;
+    gap: $space-XS;
+    // width: 100%;
+}

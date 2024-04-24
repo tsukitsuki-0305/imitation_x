@@ -1,0 +1,36 @@
+@import './variables';
+
+.right {
+    &__main{
+        width: 100%;
+    }
+    &__body {
+        height: 100%;
+        width: 100%;
+        padding: $space-L;
+        display: inline-flex;
+        flex-direction: column;
+        gap: $space-L;
+    }
+
+    &__searchArea {
+        background-color: $whiteGray-color;
+        padding: $space-M;
+        border-radius: 2rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap:$space-S;
+    }
+    &__searchIcom{
+        color: $gray-color;
+    }
+    &__searchText{
+        color: $gray-color;
+        background-color:inherit;
+        border: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+}

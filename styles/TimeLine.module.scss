@@ -1,0 +1,17 @@
+@import './variables';
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: scroll;
+  /*スクロールバー非表示（IE・Edge）*/
+  -ms-overflow-style: none;
+  /*スクロールバー非表示（Firefox）*/
+  scrollbar-width: none;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+.body::-webkit-scrollbar {
+  display: none;
+}

@@ -1,10 +1,10 @@
-@use './variables' as var;
+@import './variables';
 
 .center {
   flex: 2 0 0;
-  border-right: 1px solid var.$liteGray-color;
-  border-left: 1px solid var.$liteGray-color;
-  // height: 100%;
+  border-right: 1px solid $liteGray-color;
+  border-left: 1px solid $liteGray-color;
+  height: 100%;
 }
 
 .left,
