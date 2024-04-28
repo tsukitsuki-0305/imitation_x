@@ -7,7 +7,9 @@ function buttonClick() {
   console.log('クリックしました');
   return;
 }
-export default function Left() {
+
+export default function Left(props) {
+  // props = {userName: 'yamada hanako', userId: 'hanako_yamada'}
   return (
     <main className={style.left__main}>
       <div className={style.left__body}>
@@ -42,10 +44,10 @@ export default function Left() {
         </button>
         <div className={style.userArea}>
           <span className={style.userArea__userName}>
-            hazuki okamura
+            {props.userName}
           </span>
           <span className={style.userArea__userId}>
-            hazuki_okamura
+            {props.userId}
           </span>
         </div>
       </div>

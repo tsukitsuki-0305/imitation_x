@@ -20,7 +20,7 @@
     color: $gray-color;
 }
 
-.content {}
+// .content {}
 
 .footer {
     display: flex;
@@ -34,4 +34,21 @@
     display: flex;
     gap: $space-XS;
     // width: 100%;
+}
+
+.pinkicon{
+    color: $deepPink-color;
+    border-width:bold;
+}
+.icon{
+    color: $gray-color;
+    border-width: inherit;
+}
+.likeButton{
+    border: none;
+    background-color: $white-color;
+    cursor: pointer;
+    &:hover {
+        background-color: $white-color;
+    }
 }

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 // import Comment from './comment';
+import { useState } from 'react';
 
 // 文字列のLIKE数を数値に変換
 // function convertLike(str) {
@@ -14,38 +15,57 @@ function countComment(comments) {
   return comments.length;
 }
 
-function consoleLog(content) {
-  console.log(content);
-  return;
-}
 
-export default function Post(content) {
+
+export default function Post(props) {
+
+  const [likeCount, setLikeCount] = useState(props.like);
+  const [liked, setLiked] = useState(false);
+  const [likeStyle, setLikeStyle] = useState("icon");
+
+  // function clickLike(_count, _liked, _style) {
+  function clickLike() {
+    console.log(likeCount, liked, likeStyle);
+    if (liked) {
+      // likeが取り消された場合
+      setLikeCount(likeCount-1);
+      setLiked(false);
+      setLikeStyle("icon")
+    } else {
+      // likeされた場合
+      setLikeCount(likeCount + 1);
+      setLiked(true);
+      setLikeStyle("pinkicon")
+    }
+    return;
+  }
 
   return (
     <main className={style.tweet}>
       <div className={style.header}>
-        <p className={style.userName}>{content.userName}</p>
-        <p className={style.date}>{content.date}</p>
+        <p className={style.userName}>{props.userName}</p>
+        <p className={style.date}>{props.date}</p>
       </div>
 
-      <p className={style.content}>{content.content}</p>
+      <p className={style.content}>{props.content}</p>
 
       <div className={style.footer}>
 
         <div className={style.iconArea}>
-          <span>
-            <FontAwesomeIcon icon={faHeart} size="1x" />
-          </span>
-          <span>{content.like}</span>
+          <button type='button' className={style.likeButton} onClick={clickLike} >
+          {/* <button type='button' className={style.likeButton} onClick={() => { clickLike(liked) }}> */}
+            <FontAwesomeIcon className={style.likeStyle} icon={faHeart} size="1x" />
+          </button>
+          <span>{likeCount}</span>
         </div>
 
         <div className={style.iconArea}>
           <span>
             <FontAwesomeIcon icon={faComment} size="1x" />
           </span>
-          <span>{countComment(content.comments)}</span>
+          <span>{countComment(props.comments)}</span>
 
-          {/* {content.comments.map((content) => (
+          {/* {props.comments.map((content) => (
             <Comment className={style.content}
             userName={content.userName}
             date={content.date}
