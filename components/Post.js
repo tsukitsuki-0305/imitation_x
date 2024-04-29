@@ -21,21 +21,20 @@ export default function Post(props) {
 
   const [likeCount, setLikeCount] = useState(props.like);
   const [liked, setLiked] = useState(false);
-  const [likeStyle, setLikeStyle] = useState("icon");
+  const [likeStyle, setLikeStyle] = useState(style.icon);
 
-  // function clickLike(_count, _liked, _style) {
   function clickLike() {
-    console.log(likeCount, liked, likeStyle);
+    // console.log(likeCount, liked, likeStyle);
     if (liked) {
       // likeが取り消された場合
       setLikeCount(likeCount-1);
       setLiked(false);
-      setLikeStyle("icon")
+      setLikeStyle(style.icon)
     } else {
       // likeされた場合
       setLikeCount(likeCount + 1);
       setLiked(true);
-      setLikeStyle("pinkicon")
+      setLikeStyle(style.pinkicon)
     }
     return;
   }
@@ -53,8 +52,7 @@ export default function Post(props) {
 
         <div className={style.iconArea}>
           <button type='button' className={style.likeButton} onClick={clickLike} >
-          {/* <button type='button' className={style.likeButton} onClick={() => { clickLike(liked) }}> */}
-            <FontAwesomeIcon className={style.likeStyle} icon={faHeart} size="1x" />
+            <FontAwesomeIcon className={likeStyle} icon={faHeart} size="1x" />
           </button>
           <span>{likeCount}</span>
         </div>
