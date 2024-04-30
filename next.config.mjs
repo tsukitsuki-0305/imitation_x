@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {};
+// const nextConfig = {};　GithubPageアップロードのため下記に変更
 const nextConfig = {
     output: "export",
   }
