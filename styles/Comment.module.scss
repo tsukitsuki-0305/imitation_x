@@ -1,0 +1,65 @@
+@import './variables';
+
+.Comment {
+
+    // position: relative;
+    // width: 100%;
+    // height: auto;
+    // max-height: 100%;
+    // background-color: white;
+    // border-radius: $radius;
+    // overflow: hidden;
+    // padding: $space-L;
+
+    &__container {
+        // height: 100%;
+        // // border: 1px solid;
+        // display: flex;
+        // flex-direction: column;
+        // gap: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: $space-XS ;
+        // border-bottom: 1px solid $liteGray-color ;
+        padding: $space-M;
+    }
+
+    &__cancelButton {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.7rem;
+        border-radius: 2rem;
+        // border: 1px solid gray;
+        border: none;
+        background-color: $white-color;
+
+        &:hover {
+            background-color: $whiteGray-color;
+        }
+    }
+    &__header {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: $space-S;
+    }
+    &__userName {
+        font-weight: bold;
+        line-height: 1rem;
+    }
+    
+    &__userId {
+        color: $gray-color;
+        font-size: 0.9rem;
+    }
+    
+    &__date {
+        color: $gray-color;
+        font-size: 0.9rem;
+    }
+    
+}
+
+
+

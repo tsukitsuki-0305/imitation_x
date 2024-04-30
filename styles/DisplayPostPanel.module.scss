@@ -1,0 +1,153 @@
+@import './variables';
+
+.displayPostPanel {
+
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    background-color: white;
+    border-radius: $radius;
+    overflow: hidden;
+
+    padding: {
+        top: $space-S;
+        right: $space-S;
+        left: $space-S;
+    }
+
+    // padding-top:  $space-S;
+
+
+    &__container {
+        height: 100%;
+        max-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        gap: $space-M ;
+        padding: $space-L;
+        padding-top: $space-M;
+        overflow-y: scroll;
+        /*スクロールバー非表示（IE・Edge）*/
+        -ms-overflow-style: none;
+        /*スクロールバー非表示（Firefox）*/
+        scrollbar-width: none;
+    }
+
+    &__cancelButton {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.7rem;
+        border-radius: 2rem;
+        // border: 1px solid gray;
+        border: none;
+        background-color: $white-color;
+
+        &:hover {
+            background-color: $whiteGray-color;
+        }
+    }
+    &__postContent{
+        display: flex;
+        flex-direction: column;
+        gap: $space-XS ;
+    }
+
+    &__addCommentArea {
+        display: flex;
+        align-items: center;
+        gap: $space-M;
+    }
+
+    &__textArea {
+        font-size: 1rem;
+        padding: 0.5rem;
+        resize: none;
+        width: 100%;
+    }
+
+    &__postButton {
+        font-size: 0.9rem;
+        color: $white-color;
+        width: 4.5rem;
+        height: 2.5rem;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        border: none;
+        background-color: $skyBlue-color;
+
+        &:hover {
+            background-color: $hoverBlue-color;
+        }
+        &:disabled{
+            background-color: $whiteBlue-color;
+        }
+    }
+
+    &__commentArea {
+        height: 100%;
+        padding-left: 1rem;
+    }
+
+    &__commentList {
+        list-style: none;
+        border-left: 2px solid gray;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: $space-S;
+}
+
+.userName {
+    font-weight: bold;
+    line-height: 1rem;
+}
+
+.userId {
+    color: $gray-color;
+    font-size: 0.9rem;
+}
+
+.date {
+    color: $gray-color;
+    font-size: 0.9rem;
+}
+
+// .content {}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    // gap: $space-L;
+    color: $gray-color;
+    // padding-top: $space-S;
+}
+
+.iconArea {
+    display: flex;
+    gap: $space-XS;
+}
+
+.pinkicon {
+    color: $deepPink-color;
+    border-width: bold;
+}
+
+.icon {
+    color: $gray-color;
+    border-width: inherit;
+}
+
+.likeButton {
+    border: none;
+    background-color: $white-color;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white-color;
+    }
+}

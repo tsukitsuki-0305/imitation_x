@@ -3,37 +3,45 @@
 .tweet {
     display: flex;
     flex-direction: column;
+    gap:$space-XS ;
     border-bottom: 1px solid $liteGray-color ;
     padding: $space-M;
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    align-items: center;
+    gap: $space-S;
 }
 
 .userName {
     font-weight: bold;
+    line-height: 1rem;}
+
+.userId{
+    color: $gray-color;
+    font-size: 0.9rem;
 }
 
 .date {
     color: $gray-color;
+    font-size: 0.9rem;
 }
 
 // .content {}
 
 .footer {
     display: flex;
-    justify-content: center;
-    gap: $space-L;
+    justify-content: space-around;
+    // gap: $space-L;
     color: $gray-color;
-    padding-top: $space-M;
+    padding-top: $space-S;
 }
 
 .iconArea {
     display: flex;
     gap: $space-XS;
-    // width: 100%;
 }
 
 .pinkicon{

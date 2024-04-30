@@ -6,20 +6,23 @@ function consoleLog(content) {
     return;
 }
 
-export default function TimeLine({ _contents }) {
-
+export default function TimeLine(props) {
     return (
         <div className={style.body}>
 
-            {_contents.map((content) => (
+            {props._contents.map((content) => (
                 <Post
                     key={content.id}
+                    id={content.id}
                     className={style.content}
                     userName={content.userName}
+                    userId={content.userId}
                     date={content.date}
                     content={content.content}
                     like={content.like}
-                    comments={content.comments} />
+                    comments={content.comments}
+                    saveNewComment={props.saveNewComment}
+                />
 
             ))}
 

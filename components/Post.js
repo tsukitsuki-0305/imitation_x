@@ -4,20 +4,14 @@ import { faComment } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 // import Comment from './comment';
 import { useState } from 'react';
-
-// 文字列のLIKE数を数値に変換
-// function convertLike(str) {
-//   return Number(str);
-// }
-
-// コメントの配列からコメント数を取得
-function countComment(comments) {
-  return comments.length;
-}
-
-
+import Modal from '../components/Modal';
 
 export default function Post(props) {
+
+  // コメントの配列からコメント数を取得
+  function countComment(comments) {
+    return comments.length;
+  }
 
   const [likeCount, setLikeCount] = useState(props.like);
   const [liked, setLiked] = useState(false);
@@ -27,7 +21,7 @@ export default function Post(props) {
     // console.log(likeCount, liked, likeStyle);
     if (liked) {
       // likeが取り消された場合
-      setLikeCount(likeCount-1);
+      setLikeCount(likeCount - 1);
       setLiked(false);
       setLikeStyle(style.icon)
     } else {
@@ -39,14 +33,41 @@ export default function Post(props) {
     return;
   }
 
+  const createDisplayDate = (_date) => {
+    const date = new Date(_date);
+    const displayDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+    return displayDate;
+  };
+
+  // モーダルの状態
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  // モーダルの開閉処理
+  const toggleModal = e => {
+    console.log('toggleModal:Post');
+    console.log(e.target, e.currentTarget);
+    console.log('befor:' + isOpenModal);
+    if (e.target === e.currentTarget) {
+      // console.log('if');
+      setIsOpenModal(!isOpenModal);
+    }
+    // console.log('after:' + isOpenModal);
+  };
+  // モーダルを開く　e.target !== e.currentTargetになるため
+  const openModal = (e) => {
+    setIsOpenModal(!isOpenModal);
+  };
+
   return (
     <main className={style.tweet}>
+      {/* <div>{props.id}</div> */}
       <div className={style.header}>
         <p className={style.userName}>{props.userName}</p>
-        <p className={style.date}>{props.date}</p>
+        <p className={style.userId}>@{props.userId}</p>
       </div>
 
       <p className={style.content}>{props.content}</p>
+
+      <p className={style.date}>{createDisplayDate(props.date)}</p>
 
       <div className={style.footer}>
 
@@ -58,9 +79,9 @@ export default function Post(props) {
         </div>
 
         <div className={style.iconArea}>
-          <span>
-            <FontAwesomeIcon icon={faComment} size="1x" />
-          </span>
+          <button type='button' className={style.likeButton} onClick={openModal}>
+            <FontAwesomeIcon className={style.icon} icon={faComment} size="1x" />
+          </button>
           <span>{countComment(props.comments)}</span>
 
           {/* {props.comments.map((content) => (
@@ -72,6 +93,21 @@ export default function Post(props) {
 
         </div>
       </div>
+
+      {isOpenModal && (
+        <Modal
+          {...props}
+          close={toggleModal}
+          likeCount={likeCount}
+          // liked={liked} 
+          likeStyle={likeStyle}
+          clickLike={clickLike}
+          type={'DisplayPostPanel'}
+    // saveNewComment={props.saveNewComment} 
+        >
+        </Modal>
+      )}
+
     </main>
   )
 }

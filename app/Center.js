@@ -1,10 +1,9 @@
 import TimeLine from './TimeLine'
 
-export default function Center({ _contents }) {
-
+export default function Center(props) {
   return (
     <div>
-      <TimeLine _contents={_contents} />
+      <TimeLine _contents={props._contents} saveNewComment={props.saveNewComment} />
     </div>
   );
 

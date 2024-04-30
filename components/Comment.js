@@ -1,14 +1,23 @@
-import style from '../styles/Post.module.scss';
+import style from '../styles/Comment.module.scss';
 
-export default function Comment(content) {
+export default function Comment(props) {
 
-    return (
-      <main className={style.tweet}>
-        <div className={style.header}>
-          <p className={style.userName}>{content.userName}</p>
-          <p className={style.date}>{content.date}</p>
+  const createDisplayCommentDate = (_date) => {
+    const date = new Date(_date);
+    const displayDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+    return displayDate;
+  };
+
+  return (
+    <div className={style.Comment}>
+      <div className={style.Comment__container}>
+        <div className={style.Comment__header}>
+          <p className={style.Comment__userName}>{props.userName}</p>
+          <p className={style.Comment__userId}>@{props.userId}</p>
         </div>
-        <p className={style.content}>{content.content}</p>
-      </main>
-    )
-  }
+        <p className={style.Comment__content}>{props.content}</p>
+        <p className={style.Comment__date}>{createDisplayCommentDate(props.date)}</p>
+      </div>
+    </div>
+  )
+}

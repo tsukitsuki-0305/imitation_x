@@ -1,0 +1,59 @@
+@import './variables';
+
+.addPostPanel {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+    border-radius: $radius;
+    overflow: hidden;
+    padding: $space-L;
+
+    &__container {
+        height: 100%;
+        // border: 1px solid;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__cancelButton {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.7rem;
+        border-radius: 2rem;
+        // border: 1px solid gray;
+        border: none;
+        background-color: $white-color;
+
+        &:hover {
+            background-color: $whiteGray-color;
+        }
+    }
+
+    &__textArea {
+        font-size: 1rem;
+        padding: 0.5rem;
+        resize: none;
+    }
+    &__footer{
+        text-align: right;
+    }
+
+    &__postButton {
+        font-size: 1rem;
+        color: $white-color;
+        width: 7rem;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        border: none;
+        background-color: $skyBlue-color;
+
+        &:hover {
+            background-color: $hoverBlue-color;
+        }
+        &:disabled{
+            background-color: $whiteBlue-color;
+        }
+    }
+}
