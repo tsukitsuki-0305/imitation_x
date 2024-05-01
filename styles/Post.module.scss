@@ -3,7 +3,7 @@
 .tweet {
     display: flex;
     flex-direction: column;
-    gap:$space-XS ;
+    gap: $space-XS ;
     border-bottom: 1px solid $liteGray-color ;
     padding: $space-M;
 }
@@ -17,11 +17,29 @@
 
 .userName {
     font-weight: bold;
-    line-height: 1rem;}
+    line-height: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 70vw;
 
-.userId{
+    @media screen and (max-width: 767px) {
+        flex-shrink: 0;
+        // text-overflow: ellipsis;
+        // overflow: hidden;
+        // white-space: nowrap;
+        // max-width: 70vw;
+    }
+}
+
+.userId {
     color: $gray-color;
     font-size: 0.9rem;
+    // @media screen and (max-width: 767px) {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    // }
 }
 
 .date {
@@ -44,18 +62,21 @@
     gap: $space-XS;
 }
 
-.pinkicon{
+.pinkicon {
     color: $deepPink-color;
-    border-width:bold;
+    border-width: bold;
 }
-.icon{
+
+.icon {
     color: $gray-color;
     border-width: inherit;
 }
-.likeButton{
+
+.likeButton {
     border: none;
     background-color: $white-color;
     cursor: pointer;
+
     &:hover {
         background-color: $white-color;
     }

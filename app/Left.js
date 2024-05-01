@@ -1,7 +1,7 @@
 import style from '../styles/Left.module.scss'
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faBell } from '@fortawesome/free-regular-svg-icons'
+import { faEnvelope, faBell, faSquarePlus } from '@fortawesome/free-regular-svg-icons'
 import { faMagnifyingGlass, faHouse } from '@fortawesome/free-solid-svg-icons'
 import Modal from '../components/Modal'
 import AddPostPanel from '../components/AddPostPanel'
@@ -23,6 +23,10 @@ export default function Left(props) {
       setIsOpenModal(!isOpenModal);
     }
   };
+  // モーダルを開く　e.target !== e.currentTargetになるため
+  const openModal = (e) => {
+    setIsOpenModal(!isOpenModal);
+  };
 
   return (
     <main className={style.left__main}>
@@ -31,7 +35,7 @@ export default function Left(props) {
           <button className={style.left__button} type="button" onClick={buttonClick}>
             <span className={style.left__buttonText}>
               <FontAwesomeIcon icon={faHouse} size="1x" />
-              ホーム
+              <span className={style.left__buttonSpanText}>ホーム</span>
             </span>
           </button>
           {/* <button className={style.left__button} type="button" onClick={buttonClick}>
@@ -54,8 +58,13 @@ export default function Left(props) {
           </button> */}
         </div>
 
-        <button className={style.left__blueButton} type="button" onClick={toggleModal}>
-          ポストする
+        <button className={style.left__blueButton} type="button" onClick={openModal}>
+          <span className={style.left__blueButtonPcText}>
+            ポストする
+          </span>
+          <span className={style.left__blueButtonSpText}>
+            +
+          </span>
         </button>
 
         {isOpenModal && (

@@ -1,6 +1,12 @@
 @import './variables';
 
 .left {
+    &__main {
+        @media screen and (max-width: 767px) {
+            height: 100%;
+        }
+    }
+
     &__body {
         height: 100%;
         width: 100%;
@@ -8,6 +14,21 @@
         display: inline-flex;
         flex-direction: column;
         gap: $space-L;
+
+        @media screen and (max-width: 767px) {
+            // width: auto;
+            flex-direction: row;
+            gap: $space-M;
+            justify-content: space-between;
+            padding: $space-M;
+            align-items: center;
+        }
+    }
+
+    &__menuArea {
+        @media screen and (max-width: 767px) {
+            order: 1;
+        }
     }
 
     &__button {
@@ -25,6 +46,16 @@
         text-align: left;
         cursor: pointer;
 
+
+        @media screen and (max-width: 767px) {
+            padding: 0;
+            height: 3rem;
+            width: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         &:hover {
             background-color: $whiteGray-color;
         }
@@ -34,6 +65,12 @@
         display: flex;
         align-items: center;
         gap: $space-M;
+    }
+
+    &__buttonSpanText {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
     }
 
     &__blueButton {
@@ -49,10 +86,34 @@
         padding:$space-M;
         cursor: pointer;
 
+        @media screen and (max-width: 767px) {
+            padding: 0;
+            height: 3rem;
+            width: 3rem;
+            line-height: 1.5rem;
+            font-size: 1.5rem;
+            // text-align: center;
+            order: 3;
+        }
+
         &:hover {
             background-color: $hoverBlue-color;
         }
 
+    }
+
+    &__blueButtonPcText {
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__blueButtonSpText {
+        display: none;
+
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
     }
 }
 
@@ -68,11 +129,21 @@
         radius: 2rem;
     }
 
+    @media screen and (max-width: 767px) {
+        height: 3rem;
+        justify-content: center;
+        order: 2;
+    }
+
     &__userName {
         font-weight: bold;
     }
 
     &__userId {
         color: $gray-color;
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
     }
 }

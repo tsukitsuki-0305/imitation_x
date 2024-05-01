@@ -61,8 +61,8 @@ export default function Post(props) {
     <main className={style.tweet}>
       {/* <div>{props.id}</div> */}
       <div className={style.header}>
-        <p className={style.userName}>{props.userName}</p>
-        <p className={style.userId}>@{props.userId}</p>
+        <div className={style.userName}>{props.userName}</div>
+        <div className={style.userId}>@{props.userId}</div>
       </div>
 
       <p className={style.content}>{props.content}</p>
@@ -103,7 +103,7 @@ export default function Post(props) {
           likeStyle={likeStyle}
           clickLike={clickLike}
           type={'DisplayPostPanel'}
-    // saveNewComment={props.saveNewComment} 
+        // saveNewComment={props.saveNewComment} 
         >
         </Modal>
       )}

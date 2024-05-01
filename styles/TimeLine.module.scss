@@ -9,6 +9,9 @@
   -ms-overflow-style: none;
   /*スクロールバー非表示（Firefox）*/
   scrollbar-width: none;
+  @media screen and (max-width: 767px) {
+    height: 100%;
+  }
 }
 
 /*スクロールバー非表示（Chrome・Safari）*/

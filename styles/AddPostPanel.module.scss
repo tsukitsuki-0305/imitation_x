@@ -3,7 +3,8 @@
 .addPostPanel {
     position: relative;
     width: 100%;
-    height: 50%;
+    height: auto;
+    // height: 50%;
     background-color: white;
     border-radius: $radius;
     overflow: hidden;

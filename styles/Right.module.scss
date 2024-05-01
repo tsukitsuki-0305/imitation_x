@@ -1,9 +1,10 @@
 @import './variables';
 
 .right {
-    &__main{
+    &__main {
         width: 100%;
     }
+
     &__body {
         height: 100%;
         width: 100%;
@@ -11,6 +12,10 @@
         display: inline-flex;
         flex-direction: column;
         gap: $space-L;
+
+        @media screen and (max-width: 767px) {
+            padding: $space-M;
+        }
     }
 
     &__searchArea {
@@ -20,15 +25,18 @@
         width: 100%;
         display: flex;
         align-items: center;
-        gap:$space-S;
+        gap: $space-S;
     }
-    &__searchIcom{
+
+    &__searchIcom {
         color: $gray-color;
     }
-    &__searchText{
+
+    &__searchText {
         color: $gray-color;
-        background-color:inherit;
+        background-color: inherit;
         border: none;
+
         &:focus {
             outline: 0;
         }
