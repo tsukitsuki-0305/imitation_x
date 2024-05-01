@@ -14,11 +14,9 @@
     z-index: 1000;
     overflow-x: hidden;
     overflow-y: auto;
-    // animation: fadeon 0.3s ease 0s;
     > * {
       width: 100%;
       max-width: 480px;
       margin: auto;
-    //   animation: scaleon 0.25s ease-out 0s;
     }
   }

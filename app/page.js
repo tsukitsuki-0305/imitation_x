@@ -26,7 +26,6 @@ export default function Home() {
   const [searchWord, setSearchWord] = useState('');
   // searchWordの変更
   const searchWordChange = (newValue) => {
-    // console.log('setSearchWord')
     setSearchWord(newValue);
     setAllPosts(searchPosts(posts, comments, newValue));
   };

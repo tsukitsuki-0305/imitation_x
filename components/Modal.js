@@ -7,13 +7,11 @@ export default function Modal(props) {
     const [isMouseDown, setIsMouseDown] = useState(false);
 
     const onMouseDown = (e) => {
-        // console.log('onMouseDown:modal');
         if (e.target === e.currentTarget) {
             setIsMouseDown(true);
         }
     };
     const onMouseUp = (e) => {
-        // console.log('onMouseUp:modal');
         if (isMouseDown) {
             props.close(e);
         }

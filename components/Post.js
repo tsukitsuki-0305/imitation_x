@@ -2,7 +2,6 @@ import style from '../styles/Post.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
-// import Comment from './comment';
 import { useState } from 'react';
 import Modal from '../components/Modal';
 
@@ -18,7 +17,6 @@ export default function Post(props) {
   const [likeStyle, setLikeStyle] = useState(style.icon);
 
   function clickLike() {
-    // console.log(likeCount, liked, likeStyle);
     if (liked) {
       // likeが取り消された場合
       setLikeCount(likeCount - 1);
@@ -47,10 +45,8 @@ export default function Post(props) {
     console.log(e.target, e.currentTarget);
     console.log('befor:' + isOpenModal);
     if (e.target === e.currentTarget) {
-      // console.log('if');
       setIsOpenModal(!isOpenModal);
     }
-    // console.log('after:' + isOpenModal);
   };
   // モーダルを開く　e.target !== e.currentTargetになるため
   const openModal = (e) => {
@@ -59,7 +55,6 @@ export default function Post(props) {
 
   return (
     <main className={style.tweet}>
-      {/* <div>{props.id}</div> */}
       <div className={style.header}>
         <div className={style.userName}>{props.userName}</div>
         <div className={style.userId}>@{props.userId}</div>
@@ -84,13 +79,6 @@ export default function Post(props) {
           </button>
           <span>{countComment(props.comments)}</span>
 
-          {/* {props.comments.map((content) => (
-            <Comment className={style.content}
-            userName={content.userName}
-            date={content.date}
-            content={content.content} />
-          ))} */}
-
         </div>
       </div>
 
@@ -99,11 +87,9 @@ export default function Post(props) {
           {...props}
           close={toggleModal}
           likeCount={likeCount}
-          // liked={liked} 
           likeStyle={likeStyle}
           clickLike={clickLike}
           type={'DisplayPostPanel'}
-        // saveNewComment={props.saveNewComment} 
         >
         </Modal>
       )}

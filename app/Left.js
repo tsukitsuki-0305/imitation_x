@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faBell, faSquarePlus } from '@fortawesome/free-regular-svg-icons'
 import { faMagnifyingGlass, faHouse } from '@fortawesome/free-solid-svg-icons'
 import Modal from '../components/Modal'
-import AddPostPanel from '../components/AddPostPanel'
+// import AddPostPanel from '../components/AddPostPanel'
 
 
 function buttonClick() {
