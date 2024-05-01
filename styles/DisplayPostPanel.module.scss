@@ -106,17 +106,33 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: $space-S;
+    // gap: $space-S;
+    // @media screen and (max-width: 767px) {
+        flex-direction: column;
+        align-items: start;
+    // }
 }
 
 .userName {
     font-weight: bold;
-    line-height: 1rem;
+    word-break: break-all;
+    // line-height: 1rem;
+    // text-overflow: ellipsis;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // max-width: 70vw;
+    // @media screen and (max-width: 767px) {
+    //     flex-shrink: 0;
+    // }
 }
 
 .userId {
     color: $gray-color;
     font-size: 0.9rem;
+    word-break: break-all;
+    // text-overflow: ellipsis;
+    // overflow: hidden;
+    // white-space: nowrap;
 }
 
 .date {

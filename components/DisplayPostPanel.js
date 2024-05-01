@@ -49,8 +49,8 @@ export default function DisplayPostPanel(props) {
                 <div className={style.displayPostPanel__postContent}>
                     {/* <div>{props.id}</div> */}
                     <div className={style.header}>
-                        <p className={style.userName}>{props.userName}</p>
-                        <p className={style.userId}>@{props.userId}</p>
+                        <div className={style.userName}>{props.userName}</div>
+                        <div className={style.userId}>@{props.userId}</div>
                     </div>
 
                     <p className={style.content}>{props.content}</p>

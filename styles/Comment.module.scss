@@ -42,16 +42,20 @@
         display: flex;
         justify-content: left;
         align-items: center;
-        gap: $space-S;
+        // gap: $space-S;
+        flex-direction: column;
+        align-items: start;
     }
     &__userName {
         font-weight: bold;
-        line-height: 1rem;
+        // line-height: 1rem;
+        word-break: break-all;
     }
     
     &__userId {
         color: $gray-color;
         font-size: 0.9rem;
+        word-break: break-all;
     }
     
     &__date {

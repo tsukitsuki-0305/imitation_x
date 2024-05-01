@@ -12,8 +12,8 @@ export default function Comment(props) {
     <div className={style.Comment}>
       <div className={style.Comment__container}>
         <div className={style.Comment__header}>
-          <p className={style.Comment__userName}>{props.userName}</p>
-          <p className={style.Comment__userId}>@{props.userId}</p>
+          <div className={style.Comment__userName}>{props.userName}</div>
+          <div className={style.Comment__userId}>@{props.userId}</div>
         </div>
         <p className={style.Comment__content}>{props.content}</p>
         <p className={style.Comment__date}>{createDisplayCommentDate(props.date)}</p>
