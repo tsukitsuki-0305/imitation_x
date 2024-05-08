@@ -41,9 +41,6 @@ export default function Post(props) {
   const [isOpenModal, setIsOpenModal] = useState(false);
   // モーダルの開閉処理
   const toggleModal = e => {
-    console.log('toggleModal:Post');
-    console.log(e.target, e.currentTarget);
-    console.log('befor:' + isOpenModal);
     if (e.target === e.currentTarget) {
       setIsOpenModal(!isOpenModal);
     }

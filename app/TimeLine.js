@@ -1,11 +1,6 @@
 import Post from '../components/Post'
 import style from '../styles/TimeLine.module.scss'
 
-function consoleLog(content) {
-    console.log(content);
-    return;
-}
-
 export default function TimeLine(props) {
     return (
         <div className={style.body}>

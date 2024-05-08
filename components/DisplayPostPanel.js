@@ -7,9 +7,6 @@ import Comment from './Comment';
 
 
 export default function DisplayPostPanel(props) {
-    console.log("DisplayPostPanel");
-    console.log(props);
-
     const [text, setText] = useState('');
     const [isDisabled, setIsDisabled] = useState(true);
 
@@ -31,8 +28,6 @@ export default function DisplayPostPanel(props) {
     };
 
     const submit = (e) => {
-        console.log('submit:panel');
-        console.log(text);
         e.preventDefault();
         props.saveNewComment(text, props.id);
         if (props.close) {

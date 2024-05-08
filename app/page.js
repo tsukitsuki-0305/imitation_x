@@ -19,6 +19,7 @@ function getLoginUser(_userId) {
 }
 
 export default function Home() {
+  const users = userJson;
   // ログインユーザー　 {userName: 'yamada hanako', userId: 'hanako_yamada'}
   const loginUser = getLoginUser("hanako_yamada");
 
@@ -43,16 +44,20 @@ export default function Home() {
   function searchPosts(_postsData, _commentsData, _word) {
     let postsArray = [];
     if (_word == null || _word == undefined) {
+      // 検索ワードがない場合
       _postsData.forEach(_post => {
-        const postComments = countComments(_post.id, _commentsData);
-        const obj = { ..._post, "comments": postComments }
+        const postComments = getComments(_post.id, _commentsData);
+        const userName = getUserName(_post.userId);
+        const obj = { ..._post, "comments": postComments, "userName": userName }
         postsArray.push(obj);
       });
     } else {
+      // 検索ワードがある場合
       _postsData.forEach(_post => {
-        if (_post.userName.includes(_word) || _post.content.includes(_word)) {
-          const postComments = countComments(_post.id, _commentsData);
-          const obj = { ..._post, "comments": postComments }
+        if (_post.content.includes(_word)) {
+          const postComments = getComments(_post.id, _commentsData);
+          const userName = getUserName(_post.userId);
+          const obj = { ..._post, "comments": postComments, "userName": userName }
           postsArray.push(obj);
         }
       });
@@ -60,11 +65,28 @@ export default function Home() {
     return postsArray;
   }
   // 投稿に対するコメントの取得
-  function countComments(_parentId, _comments) {
-    const commentArray = _comments.filter(_comment => _comment.parentId == _parentId);
+  function getComments(_parentId, _comments) {
+    const commentArray = [];
+    for (const _comment of _comments) {
+      if (_comment.parentId == _parentId) {
+        const obj = { ..._comment, 'userName': getUserName(_comment.userId) };
+        commentArray.push(obj);
+      }
+    }
     return commentArray;
   }
 
+  // ユーザー名の取得
+  function getUserName(_userId) {
+    let postUser;
+    for (const user of users) {
+      if (user.userId == _userId) {
+        postUser = user;
+        break;
+      }
+    };
+    return postUser.userName;
+  }
 
   // 新規投稿保存
   const saveNewPost = (_value) => {
