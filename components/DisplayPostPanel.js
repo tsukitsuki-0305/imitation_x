@@ -66,7 +66,7 @@ export default function DisplayPostPanel(props) {
                         </div>
 
                         <div className={style.iconArea}>
-                            <span>
+                            <span className={style.commentIcon}>
                                 <FontAwesomeIcon icon={faComment} size="1x" />
                             </span>
                             <span>{countComment(props.comments)}</span>

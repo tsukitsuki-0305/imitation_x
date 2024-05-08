@@ -1,13 +1,42 @@
 @import './variables';
 
+.body {
+  height: 100%;
+}
+
+.menu {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: $space-XL;
+  background-color: #EEFAFF;
+  @media screen and (max-width: 767px) {
+  padding-left: $space-M;
+  }
+
+  &__backButton {
+    border: 1px solid $liteGray-color;
+    border-radius: 2rem;
+    background-color: $white-color;
+    height: 35px;
+    padding-left: $space-M;
+    padding-right: $space-M;
+    font-size: 0.9rem;
+    color: #3d3d3d;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+}
+
 .Home {
   display: flex;
-  height: 100%;
+  height: calc(100% - 50px);
 
   @media screen and (max-width: 767px) {
     flex-direction: column;
     overflow: hidden;
-    height: 100vh;
+    height: calc(100vh - 50px);
     width: 100vw;
   }
 }
@@ -30,9 +59,12 @@
 
   @media screen and (max-width: 767px) {
     order: 3;
-    flex: 0 1 calc(100vh - 170px);
-    height: calc(100vh - 170px);
+    flex: 0 1 calc(100vh - 170px - 50px);
+    height: calc(100vh - 170px - 50px);
     max-width: 100%;
+    border-right: none;
+    border-left: none;
+    border-top: 1px solid $liteGray-color;
   }
 }
 

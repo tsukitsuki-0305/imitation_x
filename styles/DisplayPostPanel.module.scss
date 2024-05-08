@@ -131,6 +131,7 @@
 .iconArea {
     display: flex;
     gap: $space-XS;
+    align-items: center;
 }
 
 .pinkicon {
@@ -151,4 +152,7 @@
     &:hover {
         background-color: $white-color;
     }
+}
+.commentIcon{
+    font-size: 0.85rem;
 }

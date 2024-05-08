@@ -103,16 +103,23 @@ export default function Home() {
 
 
   return (
-    <main className={style.Home}>
-      <div className={style.left}>
-        <Left {...loginUser} saveNewPost={saveNewPost} />
+    <div className={style.body}>
+      <div className={style.menu}>
+        <a className={style.menu__backButton} href='https://tsukitsuki-0305.github.io/'>
+          ← ポートフォリオへ戻る
+        </a>
       </div>
-      <div className={style.center}>
-        <Center _contents={allPosts} saveNewComment={saveNewComment} />
-      </div>
-      <div className={style.right}>
-        <Right searchWordChange={searchWordChange} />
-      </div>
-    </main >
+      <main className={style.Home}>
+        <div className={style.left}>
+          <Left {...loginUser} saveNewPost={saveNewPost} />
+        </div>
+        <div className={style.center}>
+          <Center _contents={allPosts} saveNewComment={saveNewComment} />
+        </div>
+        <div className={style.right}>
+          <Right searchWordChange={searchWordChange} />
+        </div>
+      </main >
+    </div>
   );
 }
